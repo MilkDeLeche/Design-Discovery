@@ -96,14 +96,40 @@ Restart Claude Code and you're set.
 
 ## Use
 
+**You don't need to remember a command.** Point at any element and ask a plain question — the skill reads that element and its styles, then runs the whole loop:
+
+```
+"what can we do with the nav?"
+"make these cards hoverable"
+"this hero looks bland"
+"help me figure out what I want here"
+```
+
+It reads the *real* nav, the *real* cards, the *real* hero — then offers grounded directions with previews. No spec-writing on your end.
+
+Prefer to be explicit? The slash command works too:
+
 ```bash
 /design-discovery                              # let it lead
 /design-discovery make my footer feel premium  # give it a target
 ```
 
-Or just talk to it naturally — say *"make this nicer"*, *"this looks bland"*, or *"help me figure out what I want"* and it surfaces on its own.
-
 It **skips the question funnel** for trivial, fully-specified tweaks — so it never gets in your way when you already know exactly what you want.
+
+---
+
+## Works on anything
+
+The skill grounds itself in *your* code, so it isn't tied to any one stack or element.
+
+| It works on… | Examples |
+|---|---|
+| **Any element** | a single `<div>`, a nav, a card grid, a hero, a whole section |
+| **Any framework** | React · Vue · Svelte · Astro · plain HTML |
+| **Any styling** | Tailwind · vanilla CSS · CSS variables · styled-components |
+| **Anywhere Claude Code runs** | terminal · VS Code · JetBrains · the web app |
+
+Point at a thing, ask "what can we do here?", and it figures out the rest from what's actually on the page.
 
 ---
 
