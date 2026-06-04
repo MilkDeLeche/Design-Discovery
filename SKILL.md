@@ -24,6 +24,13 @@ Good (discoverer): "Here are three you might not have considered — invert to d
 
 **The options are never a one-way door.** Picking one direction must never bury the others. After you build, the user can always go back to a direction they didn't pick — without starting over.
 
+**Always leave an off-ramp.** The guided flow is opt-in at *every* step — never a tunnel the user is trapped in. Every question you ask must carry two standing exits as options, alongside the concrete directions:
+
+- **"I'll take it from here"** — disengage the guide. Stop asking, hand control back. Do the single most sensible default if they clearly want it done, or simply step back and follow their lead. No more funnels this turn.
+- **"Let's talk it through"** — drop the menu and switch to plain conversation. Explain the tradeoffs, think together, answer questions — with zero pressure to pick anything.
+
+These exist so the skill never *feels* like too much. Someone who loves being walked through it gets the full menu; someone who just wants to move gets out in one click.
+
 ### 1. Locate the real thing
 Find the actual element, section, component, or file the user is referencing. If they pointed at a div (DOM path, selection, screenshot), resolve it to the real source. If the target is ambiguous, confirm *which* thing is in scope before anything else — and note what you'll leave untouched.
 
@@ -36,8 +43,10 @@ Read the stakes before deciding how much to dig:
 - **Specific element, open outcome** ("make these cards hoverable", "this looks bland") → propose 2–4 directions with previews.
 - **Wide creative ask** ("help me make this hero feel premium", "I don't know what I want") → propose directions across more than one axis (e.g. mood *and* motion), still grounded in the file.
 
-### 4. Propose directions — always include one bolder than asked
-Offer **2–4 concrete directions**, each with a tradeoff and a mini-preview/mockup so the user picks by *seeing*, not describing. At least one option should be **bolder than what they asked for** — that bolder option is what surfaces "something I didn't know I could describe." Use the `AskUserQuestion` tool with `preview` on the options so the choices render as visual comparisons. Anchor every option to the specific element by name ("these four standards cards", not "your component").
+### 4. Propose directions — always include one bolder than asked, and always show the exits
+Offer concrete directions, each with a tradeoff and a mini-preview/mockup so the user picks by *seeing*, not describing. At least one should be **bolder than what they asked for** — that bolder option is what surfaces "something I didn't know I could describe." Use the `AskUserQuestion` tool with `preview` on the options so the choices render as visual comparisons. Anchor every option to the specific element by name ("these four standards cards", not "your component").
+
+**Every question must also carry the two off-ramps as options** — "I'll take it from here" and "Let's talk it through" (see *Always leave an off-ramp* above). Because `AskUserQuestion` caps at **4 options**, that leaves room for **2 concrete directions** when both exits are shown: lead with the **recommended** one and the **bolder-than-asked** one, and mention any further directions in the surrounding prose (the tool's built-in "Other" free-text also catches anything else). If you genuinely need to show 3 directions, include at least "I'll take it from here" as the 4th option and offer "let's talk it through" in the prose. Never present a question with *no* exit.
 
 Only ask questions whose answers **branch what gets built**. If an answer wouldn't change the output, don't ask it — pick a sensible default and say so. Cut questions like "what's your skill level?" — infer that silently from how they phrase things and from their code, and adapt your explanation depth accordingly.
 
@@ -57,7 +66,7 @@ The single most reassuring thing you can do is make the choice feel **reversible
 
 > "Like this one, or want to try **[Option B]** or **[Option C]** instead?"
 
-Use the `AskUserQuestion` tool so it's one click: first option **"Keep this"**, then each of the other directions you originally offered (same labels, same previews), plus room for "something else." This is **not** a new interrogation round — it's the *same menu* from step 4, offered again now that they can see the real thing built. Because you already explored those directions, switching is cheap: if they pick another, build that one instead (and you can offer to keep the first around for comparison). Never let a pick feel like a door clicking shut behind them.
+Use the `AskUserQuestion` tool so it's one click: first option **"Keep this"**, then the other direction(s) you originally offered (same labels, same previews), and an off-ramp — **"I'll take it from here"** — so the user can stop here just as easily as switch. (Within the 4-option cap, that's typically: Keep this · the other direction · I'll take it from here · "Other" free-text.) This is **not** a new interrogation round — it's the *same menu* from step 4, offered again now that they can see the real thing built. Because you already explored those directions, switching is cheap: if they pick another, build that one instead (and you can offer to keep the first around for comparison). Never let a pick feel like a door clicking shut behind them.
 
 ## Tone
 Collaborative and inquisitive. Concise questions, no jargon dumps, no long monologues. Propose, don't lecture.
@@ -72,3 +81,4 @@ Before sending questions or finishing, verify:
 6. You expanded once, then converged — you're not still asking after the user chose.
 7. The result is verified against the specific element, with an offer to tune or push further.
 8. You closed with a reversible "keep this, or try [the other directions]?" — the pick never feels like a one-way door.
+9. Every question carried the two off-ramps ("I'll take it from here" / "Let's talk it through") — the user can always exit the guide in one click.
