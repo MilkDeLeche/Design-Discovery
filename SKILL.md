@@ -24,12 +24,17 @@ Good (discoverer): "Here are three you might not have considered — invert to d
 
 **The options are never a one-way door.** Picking one direction must never bury the others. After you build, the user can always go back to a direction they didn't pick — without starting over.
 
-**Always leave an off-ramp.** The guided flow is opt-in at *every* step — never a tunnel the user is trapped in. Every question you ask must carry two standing exits as options, alongside the concrete directions:
+**Always leave an off-ramp — without starving the menu.** The guided flow is opt-in at *every* step, never a tunnel. But the exits must **never crowd out the concrete variety** — being shown only two directions feels like you missed all the others, which defeats the point. So:
 
+- **Variety comes first.** Show as many genuinely distinct concrete directions as the ask warrants (up to the tool's 4-option cap). Don't drop a real direction just to seat an exit.
+- **The exits are always available, but they don't always cost option slots.** State them in the prose around every question — a standing one-liner like *"…or tell me to take it from here, or that you'd rather talk it through."* The tool's built-in **"Other"** free-text also always carries them. They're one sentence away whether or not they're buttons.
+- **Promote an exit to an explicit option only when you have a spare slot** (i.e. you're showing ≤3 concrete directions). With 3 directions, add **"I'll take it from here"** as the 4th. With 2, you can show both exits. With 4 strong directions, keep all four and put the exits in the prose.
+
+The two exits, by meaning:
 - **"I'll take it from here"** — disengage the guide. Stop asking, hand control back. Do the single most sensible default if they clearly want it done, or simply step back and follow their lead. No more funnels this turn.
 - **"Let's talk it through"** — drop the menu and switch to plain conversation. Explain the tradeoffs, think together, answer questions — with zero pressure to pick anything.
 
-These exist so the skill never *feels* like too much. Someone who loves being walked through it gets the full menu; someone who just wants to move gets out in one click.
+Net effect: someone who loves the menu sees its *full* breadth; someone who wants out is never more than one sentence (or one button) away. Never trade away a real option to show an exit.
 
 ### 1. Locate the real thing
 Find the actual element, section, component, or file the user is referencing. If they pointed at a div (DOM path, selection, screenshot), resolve it to the real source. If the target is ambiguous, confirm *which* thing is in scope before anything else — and note what you'll leave untouched.
@@ -46,7 +51,7 @@ Read the stakes before deciding how much to dig:
 ### 4. Propose directions — always include one bolder than asked, and always show the exits
 Offer concrete directions, each with a tradeoff and a mini-preview/mockup so the user picks by *seeing*, not describing. At least one should be **bolder than what they asked for** — that bolder option is what surfaces "something I didn't know I could describe." Use the `AskUserQuestion` tool with `preview` on the options so the choices render as visual comparisons. Anchor every option to the specific element by name ("these four standards cards", not "your component").
 
-**Every question must also carry the two off-ramps as options** — "I'll take it from here" and "Let's talk it through" (see *Always leave an off-ramp* above). Because `AskUserQuestion` caps at **4 options**, that leaves room for **2 concrete directions** when both exits are shown: lead with the **recommended** one and the **bolder-than-asked** one, and mention any further directions in the surrounding prose (the tool's built-in "Other" free-text also catches anything else). If you genuinely need to show 3 directions, include at least "I'll take it from here" as the 4th option and offer "let's talk it through" in the prose. Never present a question with *no* exit.
+**Every question must also leave an off-ramp — but variety comes first** (see *Always leave an off-ramp* above). Lead with the **recommended** direction and always keep the **bolder-than-asked** one; then add as many other distinct directions as the ask warrants, up to the tool's **4-option cap**. Don't sacrifice a real direction just to seat an exit: the exits live in the surrounding prose (*"…or tell me to take it from here, or that you'd rather talk it through"*) and in the tool's built-in "Other" free-text regardless. Promote an exit to an actual option only when you have a spare slot — e.g. with 3 concrete directions, make "I'll take it from here" the 4th; with 2, you can show both exits. Never present a question whose prose doesn't make the exits obvious.
 
 Only ask questions whose answers **branch what gets built**. If an answer wouldn't change the output, don't ask it — pick a sensible default and say so. Cut questions like "what's your skill level?" — infer that silently from how they phrase things and from their code, and adapt your explanation depth accordingly.
 
@@ -81,4 +86,4 @@ Before sending questions or finishing, verify:
 6. You expanded once, then converged — you're not still asking after the user chose.
 7. The result is verified against the specific element, with an offer to tune or push further.
 8. You closed with a reversible "keep this, or try [the other directions]?" — the pick never feels like a one-way door.
-9. Every question carried the two off-ramps ("I'll take it from here" / "Let's talk it through") — the user can always exit the guide in one click.
+9. Variety came first — you showed as many distinct directions as the cap allows, and the off-ramps ("I'll take it from here" / "Let's talk it through") were always reachable in the prose (and as option buttons when a slot was free), never crowding out a real direction.
