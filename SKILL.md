@@ -43,6 +43,12 @@ Net effect: someone who loves the menu sees its *full* breadth; someone who want
 
 When you research, say so and cite what you pulled — then translate each idea into this site's language out loud ("builder sites lead with a process timeline; I'll build one using your existing section rhythm and `--ink`/`--surface` tokens").
 
+**Stand on expert skills — don't improvise what an installed skill does better.** Before building anything in a domain that has a dedicated skill available, **invoke that skill and let it drive the implementation** rather than relying on general knowledge. The flagship case is **animation: if the project uses GSAP (or you're adding motion), reach for the official `gsap-*` skills** (`gsap-core`, `gsap-scrolltrigger`, `gsap-timeline`, `gsap-react`, `gsap-plugins`, `gsap-performance`, …) — they're written by the GSAP team and will beat anything improvised. This generalizes: React patterns, accessibility, performance, framework-specific work — if an expert skill for it is installed, use it. Notes:
+
+- **It's soft, not a hard dependency.** Check what skills are actually available and use them; if none exists for the domain, proceed on your own. Never block on a skill that isn't installed.
+- **Say which expert skill you're leaning on**, so the user sees where the quality is coming from ("adding a scroll-pinned reveal — I'll use the `gsap-scrolltrigger` skill for this").
+- The house-style rule still wins: expert skills inform *how to implement* (correct GSAP patterns, performant easing); your project's tokens and rhythm still govern *how it looks*.
+
 ### 1. Locate the real thing
 Find the actual element, section, component, or file the user is referencing. If they pointed at a div (DOM path, selection, screenshot), resolve it to the real source. If the target is ambiguous, confirm *which* thing is in scope before anything else — and note what you'll leave untouched.
 
@@ -68,7 +74,7 @@ Hold the tension between "a better version" (explore) and "maybe just what I nee
 Note this is about not opening *new* rounds of questions — it does **not** mean the chosen option is final. The directions you already surfaced stay available (see step 8). Committing means "build one now," not "you can never see the others."
 
 ### 6. Build it
-Implement the chosen direction in the real code, matching the surrounding conventions (tokens, spacing, easing, naming). Respect the scope boundary from step 1 — change the thing in scope, leave siblings alone, and say what you deliberately didn't touch.
+Implement the chosen direction in the real code, matching the surrounding conventions (tokens, spacing, easing, naming). Respect the scope boundary from step 1 — change the thing in scope, leave siblings alone, and say what you deliberately didn't touch. **If the build touches a domain with an installed expert skill — especially animation/GSAP → the `gsap-*` skills — invoke that skill to drive the implementation** (see *Stand on expert skills* above); don't hand-roll what a dedicated skill does better.
 
 ### 7. Verify against the specific element — close the loop
 "Does it work for *this* div?" is only answered by checking the result against that exact element. Offer to run it / view it live, point out anything worth tuning, and surface 1–2 optional follow-ups that push further (e.g. "want a `prefers-reduced-motion` guard now that there's motion?", "want an accent color on the invert?").
@@ -95,3 +101,4 @@ Before sending questions or finishing, verify:
 8. You closed with a reversible "keep this, or try [the other directions]?" — the pick never feels like a one-way door.
 9. Variety came first — you showed as many distinct directions as the cap allows, and the off-ramps ("I'll take it from here" / "Let's talk it through") were always reachable in the prose (and as option buttons when a slot was free), never crowding out a real direction.
 10. If the ask referenced outside examples, you researched them for ideas but executed in the project's own design system (real tokens/components) — the result never looks transplanted and coheres with what the business actually does.
+11. For any domain with an installed expert skill (animation/GSAP → `gsap-*`, etc.), you invoked that skill to drive the build instead of improvising — and said which one you leaned on.
