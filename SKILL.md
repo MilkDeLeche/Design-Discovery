@@ -36,6 +36,13 @@ The two exits, by meaning:
 
 Net effect: someone who loves the menu sees its *full* breadth; someone who wants out is never more than one sentence (or one button) away. Never trade away a real option to show an exit.
 
+**Borrow ideas from outside, but build in the house style.** When the ask points to external references — *"make it like X"*, *"find sites that do Y and get inspiration"* — go research them (web search, real examples) for **structure and ideas**: what sections the genre uses, what patterns convert (a process timeline for builders, before/after sliders for flips, etc.). But execution stays **100% in the project's own design system** — its tokens, type scale, spacing, components, motion, and section rhythm. Inspiration decides *what to build*; the existing site decides *how it looks*. Two tests the result must pass:
+
+- **It never looks transplanted.** A new page should feel like it was always part of this site, not a template pasted in. Reuse the real tokens/components you read in step 2 — don't invent a new color or font because the reference used one.
+- **It coheres with what the business actually does.** Ground in the brand's full set of offerings, not just its visuals — the page should make sense alongside everything else the company does.
+
+When you research, say so and cite what you pulled — then translate each idea into this site's language out loud ("builder sites lead with a process timeline; I'll build one using your existing section rhythm and `--ink`/`--surface` tokens").
+
 ### 1. Locate the real thing
 Find the actual element, section, component, or file the user is referencing. If they pointed at a div (DOM path, selection, screenshot), resolve it to the real source. If the target is ambiguous, confirm *which* thing is in scope before anything else — and note what you'll leave untouched.
 
@@ -87,3 +94,4 @@ Before sending questions or finishing, verify:
 7. The result is verified against the specific element, with an offer to tune or push further.
 8. You closed with a reversible "keep this, or try [the other directions]?" — the pick never feels like a one-way door.
 9. Variety came first — you showed as many distinct directions as the cap allows, and the off-ramps ("I'll take it from here" / "Let's talk it through") were always reachable in the prose (and as option buttons when a slot was free), never crowding out a real direction.
+10. If the ask referenced outside examples, you researched them for ideas but executed in the project's own design system (real tokens/components) — the result never looks transplanted and coheres with what the business actually does.
