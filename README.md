@@ -60,18 +60,33 @@ No blank-page paralysis. No essay describing pixels. You pointed; it shipped.
 ## How it works
 
 ```
-Locate  →  Read  →  Gauge how open the ask is  →  Propose directions
-   (one bolder than asked, with previews)  →  Converge  →  Build
-        →  Verify against the real element  →  Offer to push further
+Locate → Read → Gauge how open the ask is → Propose directions
+  (one bolder, with previews) → Converge → Build
+  → Verify against the real element → Keep or switch (the menu stays open)
+  → Offer to push further → (on wrap-up) leave a PROGRESS.md handoff
 ```
 
 1. **Locate** the actual element / component / file you mean.
 2. **Read** the real code first — existing tokens, conventions, neighbors.
 3. **Gauge** the ask. Trivial + specific? It just does it. Open-ended? It opens up the option space.
-4. **Propose** 2–4 grounded directions with visual previews — always one bolder than you asked.
+4. **Propose** distinct directions with visual previews — always one bolder than you asked, and always with an off-ramp (see below).
 5. **Converge** on your pick. Expand once, then commit (no endless interrogation).
-6. **Build** it, matching your code's style.
-7. **Verify** against the real thing and offer the next move.
+6. **Build** it, matching your code's style — leaning on installed expert skills (e.g. GSAP) for the domains they cover.
+7. **Verify** against the real thing.
+8. **Keep or switch** — re-offers the directions you *didn't* pick, so a choice is never a one-way door.
+9. **On wrap-up** (only when it's genuinely time to stop) — create or update a `PROGRESS.md` so the next session resumes cold.
+
+---
+
+## What makes it different
+
+These are the guardrails that keep it useful instead of annoying:
+
+- **🔙 Choices stay reversible.** After it builds, it re-offers the other directions — picking one never buries the rest.
+- **🚪 Always an off-ramp.** Every question quietly carries *"I'll take it from here"* and *"Let's talk it through"* — but variety of real options comes first; the exits never crowd them out.
+- **🏠 Borrows ideas, builds in your house style.** Ask it to take cues from another site and it researches the *patterns* — then executes 100% in your tokens, type scale, and components, so nothing looks transplanted.
+- **🧠 Stands on expert skills.** For domains with a dedicated skill installed (animation → the official GSAP skills, etc.), it invokes that skill instead of improvising — and tells you which one.
+- **🧭 Leaves a breadcrumb.** When you wrap up, it updates a `PROGRESS.md` handoff (goal, done, what's left, how to resume) — updated in place, never duplicated.
 
 ---
 
