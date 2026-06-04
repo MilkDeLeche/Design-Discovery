@@ -89,6 +89,8 @@ Use the `AskUserQuestion` tool so it's one click: first option **"Keep this"**, 
 ### 9. On wrap-up — leave a handoff (PROGRESS.md)
 When the user winds the session down — they pick a **"Wrap up"** option, or say "that's it for now," "let's stop," "good place to stop" — don't just end. Leave a `PROGRESS.md` at the repo root so the next session (or another machine, or another person) can resume cold.
 
+**This is contextual, not a default.** Don't surface "wrap up" off the bat, and don't plant it as a standing option in every menu — that would nag. It emerges *only when wrapping up genuinely makes sense*: a natural stopping point (a milestone shipped, the thread of work resolved) or the user clearly winding down. Read the moment. When it isn't time to stop, there's no wrap-up option and no handoff — you just keep going.
+
 **Check for an existing `PROGRESS.md` first — and if it exists, UPDATE it in place; never overwrite it with a fresh one or append a second copy.** Read it, revise the sections that changed (status, what's left), and add a short **"Since last update (DATE)"** delta note near the top — the same way you'd edit a living doc, not regenerate it. Only write a brand-new file when none exists yet. Each session should leave *one* evolving handoff, not a pile of redundant ones.
 
 Capture, briefly and scannably:
