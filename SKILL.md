@@ -20,7 +20,7 @@ Good (discoverer): "Here are three you might not have considered — invert to d
 
 ## The loop
 
-> **Locate → Read → Gauge openness → Propose directions (one bolder than asked) → Converge → Build → Verify against the real element → Keep or switch (the menu stays open) → Offer to push further.**
+> **Locate → Read → Gauge openness → Propose directions (one bolder than asked) → Converge → Build → Verify against the real element → Keep or switch (the menu stays open) → Offer to push further → (on wrap-up) leave a handoff.**
 
 **The options are never a one-way door.** Picking one direction must never bury the others. After you build, the user can always go back to a direction they didn't pick — without starting over.
 
@@ -86,6 +86,22 @@ The single most reassuring thing you can do is make the choice feel **reversible
 
 Use the `AskUserQuestion` tool so it's one click: first option **"Keep this"**, then the other direction(s) you originally offered (same labels, same previews), and an off-ramp — **"I'll take it from here"** — so the user can stop here just as easily as switch. (Within the 4-option cap, that's typically: Keep this · the other direction · I'll take it from here · "Other" free-text.) This is **not** a new interrogation round — it's the *same menu* from step 4, offered again now that they can see the real thing built. Because you already explored those directions, switching is cheap: if they pick another, build that one instead (and you can offer to keep the first around for comparison). Never let a pick feel like a door clicking shut behind them.
 
+### 9. On wrap-up — leave a handoff (PROGRESS.md)
+When the user winds the session down — they pick a **"Wrap up"** option, or say "that's it for now," "let's stop," "good place to stop" — don't just end. Leave a `PROGRESS.md` at the repo root so the next session (or another machine, or another person) can resume cold.
+
+**Check for an existing `PROGRESS.md` first — and if it exists, UPDATE it in place; never overwrite it with a fresh one or append a second copy.** Read it, revise the sections that changed (status, what's left), and add a short **"Since last update (DATE)"** delta note near the top — the same way you'd edit a living doc, not regenerate it. Only write a brand-new file when none exists yet. Each session should leave *one* evolving handoff, not a pile of redundant ones.
+
+Capture, briefly and scannably:
+- **The goal** and any hard constraints ("the landing is frozen — don't restyle it").
+- **What's done** — the pages/features built and where they live (component/file names).
+- **What's left** — concrete next steps, and any **pending decisions** (e.g. "needs attorney review," "still a placeholder image").
+- **How to resume** — run/build/commit commands, routing notes, anything non-obvious.
+- **Placeholders & key decisions** — what's stubbed and why, so nobody mistakes a placeholder for finished work.
+
+Rules:
+- **Absolute dates**, not "today"/"yesterday" — the file outlives the session.
+- It's the same instinct as a good commit message, but at the session level: a clean state someone can start from. Offer to commit it with the rest of the work.
+
 ## Tone
 Collaborative and inquisitive. Concise questions, no jargon dumps, no long monologues. Propose, don't lecture.
 
@@ -102,3 +118,4 @@ Before sending questions or finishing, verify:
 9. Variety came first — you showed as many distinct directions as the cap allows, and the off-ramps ("I'll take it from here" / "Let's talk it through") were always reachable in the prose (and as option buttons when a slot was free), never crowding out a real direction.
 10. If the ask referenced outside examples, you researched them for ideas but executed in the project's own design system (real tokens/components) — the result never looks transplanted and coheres with what the business actually does.
 11. For any domain with an installed expert skill (animation/GSAP → `gsap-*`, etc.), you invoked that skill to drive the build instead of improvising — and said which one you leaned on.
+12. On wrap-up, you created or updated a `PROGRESS.md` handoff (goal, done, what's left, how to resume, placeholders/decisions; absolute dates; updated in place, not duplicated) so the next session can start cold.
