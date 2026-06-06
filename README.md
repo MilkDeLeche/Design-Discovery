@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/design-discovery-banner.svg" alt="Design Discovery — point at it, pick a direction">
+  <img src="assets/design-discovery-banner.png" alt="Design Discovery — point at it, pick a direction" width="1280">
 </p>
 
 <h1 align="center">Design Discovery</h1>
@@ -225,7 +225,8 @@ Design-Discovery/
 ├── README.md             # You are here
 ├── LICENSE
 └── assets/
-    └── design-discovery-banner.svg
+    ├── design-discovery-banner.png   # README banner (GitHub does not render SVG in README)
+    └── design-discovery-banner.svg   # Editable source
 ```
 
 ---
