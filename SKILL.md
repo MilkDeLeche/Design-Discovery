@@ -43,11 +43,34 @@ Net effect: someone who loves the menu sees its *full* breadth; someone who want
 
 When you research, say so and cite what you pulled — then translate each idea into this site's language out loud ("builder sites lead with a process timeline; I'll build one using your existing section rhythm and `--ink`/`--surface` tokens").
 
-**Stand on expert skills — don't improvise what an installed skill does better.** Before building anything in a domain that has a dedicated skill available, **invoke that skill and let it drive the implementation** rather than relying on general knowledge. The flagship case is **animation: if the project uses GSAP (or you're adding motion), reach for the official `gsap-*` skills** (`gsap-core`, `gsap-scrolltrigger`, `gsap-timeline`, `gsap-react`, `gsap-plugins`, `gsap-performance`, …) — they're written by the GSAP team and will beat anything improvised. This generalizes: React patterns, accessibility, performance, framework-specific work — if an expert skill for it is installed, use it. Notes:
+**Stand on expert skills — don't improvise what an installed skill does better.** Before building anything in a domain that has a dedicated skill available, **invoke that skill and let it drive the implementation** rather than relying on general knowledge. The flagship cases:
+
+- **Animation:** if the project uses GSAP (or you're adding motion), reach for the official `gsap-*` skills (`gsap-core`, `gsap-scrolltrigger`, `gsap-timeline`, `gsap-react`, `gsap-plugins`, `gsap-performance`, …) — they're written by the GSAP team and will beat anything improvised.
+- **Typography:** if the problem is specifically fonts, type hierarchy, font loading or pairing, a weak/generic type system, or matching typography to the site's industry — reach for the **`font-playbook`** skill ([FontPlaybook](https://github.com/MilkDeLeche/FontPlaybook.git)). It audits the real template, recommends best/safe/bold fits, implements loading and CSS tokens, and verifies the font actually renders. **Don't guess at font choices when `font-playbook` is installed.**
+
+This generalizes: React patterns, accessibility, performance, framework-specific work — if an expert skill for it is installed, use it. Notes:
 
 - **It's soft, not a hard dependency.** Check what skills are actually available and use them; if none exists for the domain, proceed on your own. Never block on a skill that isn't installed.
-- **Say which expert skill you're leaning on**, so the user sees where the quality is coming from ("adding a scroll-pinned reveal — I'll use the `gsap-scrolltrigger` skill for this").
-- The house-style rule still wins: expert skills inform *how to implement* (correct GSAP patterns, performant easing); your project's tokens and rhythm still govern *how it looks*.
+- **Say which expert skill you're leaning on**, so the user sees where the quality is coming from ("adding a scroll-pinned reveal — I'll use the `gsap-scrolltrigger` skill for this"; "the fonts feel generic — I'll use the `font-playbook` skill to audit and fix the type system").
+- The house-style rule still wins: expert skills inform *how to implement* (correct GSAP patterns, performant easing; disciplined font loading and type scales); your project's tokens and rhythm still govern *how it looks*.
+
+### Typography handoff — keep skills separate, stay aware
+
+**`design-discovery` is the broad creative director.** **`font-playbook` is the typography specialist.** They stay separate repos/skills, but they know about each other.
+
+**Invoke `font-playbook` when typography is the main problem** — even if the user pointed at a specific element:
+- fonts feel generic, default, or mismatched to the business
+- hero/display type doesn't fit the rest of the page
+- hierarchy is weak (headings, body, UI, captions all blur together)
+- a font import isn't loading or the wrong weight renders
+- the user asks for fonts that fit an industry (finance, real estate, SaaS, editorial, luxury, etc.)
+- type scale, line-height, tracking, or pairing needs a disciplined pass
+
+**Stay in `design-discovery` (don't delegate) when:**
+- the ask is broader than type — layout, color, motion, composition, "make this section premium" where fonts are one lever among several. You may still *note* a typography issue and offer to pull in `font-playbook` after the broader direction is chosen.
+- the tweak is trivial and fully specified ("set this heading to `text-5xl`", "bump letter-spacing on the kicker") — just do it.
+
+**When both apply:** you own scope, element targeting, reversible direction menus, and verification against the real component; `font-playbook` owns the typography audit, recommendation set, implementation, and font-render verification. Read the element first (step 2), then hand the typography work to `font-playbook` rather than improvising three random Google Fonts in a menu.
 
 ### 1. Locate the real thing
 Find the actual element, section, component, or file the user is referencing. If they pointed at a div (DOM path, selection, screenshot), resolve it to the real source. If the target is ambiguous, confirm *which* thing is in scope before anything else — and note what you'll leave untouched.
@@ -119,5 +142,5 @@ Before sending questions or finishing, verify:
 8. You closed with a reversible "keep this, or try [the other directions]?" — the pick never feels like a one-way door.
 9. Variety came first — you showed as many distinct directions as the cap allows, and the off-ramps ("I'll take it from here" / "Let's talk it through") were always reachable in the prose (and as option buttons when a slot was free), never crowding out a real direction.
 10. If the ask referenced outside examples, you researched them for ideas but executed in the project's own design system (real tokens/components) — the result never looks transplanted and coheres with what the business actually does.
-11. For any domain with an installed expert skill (animation/GSAP → `gsap-*`, etc.), you invoked that skill to drive the build instead of improvising — and said which one you leaned on.
+11. For any domain with an installed expert skill (animation/GSAP → `gsap-*`; typography → `font-playbook`, etc.), you invoked that skill to drive the build instead of improvising — and said which one you leaned on.
 12. On wrap-up, you created or updated a `PROGRESS.md` handoff (goal, done, what's left, how to resume, placeholders/decisions; absolute dates; updated in place, not duplicated) so the next session can start cold.

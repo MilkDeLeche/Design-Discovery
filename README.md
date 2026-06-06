@@ -156,6 +156,15 @@ Point at a thing, ask "what can we do here?", and it figures out the rest from w
 - 🧠 **Knows when to shut up** — small ask, small response. No over-engineering.
 - ✅ **Closes the loop** — builds it *and* checks it against the thing you pointed at.
 
+## Companion skill
+
+Pairs with **[FontPlaybook](https://github.com/MilkDeLeche/FontPlaybook)** — keep them separate, but aware:
+
+- **design-discovery** — broad creative director: inspect the real element, offer directions, converge, build, verify.
+- **font-playbook** — typography specialist: audit fonts, research industry fit, recommend best/safe/bold fits, implement loading and CSS tokens, verify rendering.
+
+When the problem is specifically fonts, hierarchy, loading, pairing, or industry-matched type, design-discovery delegates to `font-playbook` instead of guessing at Google Fonts.
+
 ## Contributing
 
 PRs and ideas welcome — new question patterns, better previews, smarter scope detection. Open an issue or a pull request.
