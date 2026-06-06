@@ -1,0 +1,33 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Design Discovery banner</title>
+  <desc id="desc">Portfolio banner for Design Discovery, a Claude Code skill that turns vague design asks into concrete visual directions.</desc>
+  <rect width="1280" height="640" fill="#F7F4EE"/>
+  <rect x="72" y="70" width="1136" height="500" rx="28" fill="#101014"/>
+  <path d="M72 448C198 372 318 368 458 442C598 516 718 520 858 446C998 372 1108 368 1208 420V570H72V448Z" fill="#5B7CFA"/>
+  <path d="M72 392C220 298 352 308 502 398C642 482 778 478 928 392C1058 316 1148 308 1208 338V570H72V392Z" fill="#C47AFF"/>
+  <path d="M72 488C210 424 334 418 478 478C622 538 772 540 926 478C1038 436 1130 424 1208 446V570H72V488Z" fill="#FF6B4A"/>
+  <circle cx="1080" cy="118" r="42" fill="none" stroke="#F7F4EE" stroke-width="3" opacity="0.35"/>
+  <path d="M1080 88 L1080 118 L1104 132" stroke="#F7F4EE" stroke-width="3" stroke-linecap="round" opacity="0.55"/>
+  <text x="116" y="152" fill="#F7F4EE" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="700" letter-spacing="0.08em">DESIGN DISCOVERY</text>
+  <text x="116" y="274" fill="#F7F4EE" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="82" font-weight="800" letter-spacing="-0.045em">Point at it.</text>
+  <text x="116" y="355" fill="#F7F4EE" font-family="Georgia, serif" font-size="72" font-style="italic" letter-spacing="-0.035em">Pick a direction.</text>
+  <text x="120" y="456" fill="#101014" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="26" font-weight="700">Inspect. Propose. Build. Verify.</text>
+  <g transform="translate(808 108)">
+    <rect width="310" height="220" rx="18" fill="#F7F4EE"/>
+    <text x="24" y="42" fill="#101014" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif" font-size="16" font-weight="800" letter-spacing="0.06em">HOVER STYLE</text>
+    <rect x="24" y="58" width="82" height="54" rx="10" fill="#101014"/>
+    <text x="36" y="92" fill="#F7F4EE" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">Invert</text>
+    <rect x="114" y="58" width="82" height="54" rx="10" fill="#E8E4DC" stroke="#101014" stroke-width="2"/>
+    <text x="126" y="92" fill="#101014" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">Lift</text>
+    <rect x="204" y="58" width="82" height="54" rx="10" fill="#5B7CFA" opacity="0.22"/>
+    <text x="222" y="92" fill="#101014" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="14" font-weight="700">Tint</text>
+    <text x="24" y="148" fill="#454545" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15">Three directions. One bolder.</text>
+    <text x="24" y="176" fill="#454545" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="15">You pick by seeing  not describing.</text>
+    <rect x="24" y="192" width="120" height="10" rx="5" fill="#FF6B4A"/>
+  </g>
+  <g transform="translate(930 352)">
+    <rect width="220" height="128" rx="18" fill="#F7F4EE"/>
+    <text x="24" y="50" fill="#101014" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.03em">Keep or switch</text>
+    <text x="24" y="86" fill="#454545" font-family="Georgia, serif" font-size="22" font-style="italic">never a one-way door</text>
+  </g>
+</svg>

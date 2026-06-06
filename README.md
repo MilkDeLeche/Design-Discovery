@@ -1,43 +1,97 @@
-<div align="center">
+<p align="center">
+  <img src="assets/design-discovery-banner.svg" alt="Design Discovery — point at it, pick a direction">
+</p>
 
-# 🧭 design-discovery
+<h1 align="center">Design Discovery</h1>
 
-### The Claude Code skill that asks the right questions *for* you.
+<p align="center">
+  <strong>The creative director skill for vibe coders.</strong><br>
+  Turn a vague <em>"make this cooler"</em> into concrete directions you can pick by seeing — then build, verify, and switch without starting over.
+</p>
 
-*Stop describing what you want. Point at what you like.*
+<p align="center">
+  <a href="https://docs.claude.com/en/docs/claude-code"><img src="https://img.shields.io/badge/Claude%20Code-skill-da7756?logo=anthropic&logoColor=white" alt="Claude Code Skill"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+  <a href="#contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+  <a href="https://github.com/MilkDeLeche/Design-Discovery/stargazers"><img src="https://img.shields.io/github/stars/MilkDeLeche/Design-Discovery?style=social" alt="Stars"></a>
+</p>
 
-[![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-skill-da7756?logo=anthropic&logoColor=white)](https://docs.claude.com/en/docs/claude-code)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
-[![Stars](https://img.shields.io/github/stars/MilkDeLeche/Design-Discovery?style=social)](https://github.com/MilkDeLeche/Design-Discovery/stargazers)
+---
 
-</div>
+## Part of the vibe coder's utility belt
+
+Design skills for people who ship fast with AI — and still want the result to feel *designed*, not generated.
+
+| Skill | Role | Repo |
+| --- | --- | --- |
+| **Design Discovery** ← you are here | Broad creative director — inspect, propose directions, build, verify | [Design-Discovery](https://github.com/MilkDeLeche/Design-Discovery) |
+| **[FontPlaybook](https://github.com/MilkDeLeche/FontPlaybook)** | Typography specialist — audit, pair, load, scale, industry-fit type | [FontPlaybook](https://github.com/MilkDeLeche/FontPlaybook) |
+
+**Design Discovery** handles layout, motion, composition, and open-ended polish. When the problem is specifically fonts, hierarchy, or loading — it delegates to **FontPlaybook** instead of guessing at Google Fonts.
 
 ---
 
 ## The problem
 
-You're vibe coding. You point at a thing and say *"make this cooler."*
+You're vibe coding. You point at a card grid and say *"make these hoverable."*
 
-The AI either guesses wrong, or fires back *"describe the animation you envision, including start and end states."* — and now **you** have to do the design thinking you opened the AI to avoid.
+The AI either guesses wrong, or asks you to *"describe the animation you envision, including start and end states."* — and now **you** are doing the design thinking you opened the AI to avoid.
 
 You don't always know what you want. You just know the current thing isn't it.
 
 ## The fix
 
-`design-discovery` flips the script. Instead of asking you to describe a destination, it **reads your actual code first**, then holds up a few concrete directions — one of them bolder than you asked for — and lets you pick by *seeing*.
+**Design Discovery** is a **discoverer**, not a clarifier.
+
+A clarifier pins down what you already had in mind. A discoverer expands what you thought was possible — *then* converges and builds it.
 
 > You react to options far more creatively than you generate from a blank page. This skill supplies the options.
 
-It's a **discoverer**, not a clarifier. A clarifier pins down what you already had in mind. A discoverer expands what you thought was possible — *then* converges and builds it.
+It reads your **real code first** — tokens, neighbors, conventions — then holds up a few concrete directions. Always one bolder than you asked for. You pick by *seeing*, not spec-writing.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**Without the skill**
+
+```
+You: "make these cards hoverable"
+
+AI: "What kind of hover? Describe
+     the transition, easing, and
+     end state you want."
+
+You: 😶
+```
+
+</td>
+<td width="50%" valign="top">
+
+**With Design Discovery**
+
+```
+You: "make these cards hoverable"
+
+AI: "Three directions for these
+     four service cards — invert,
+     lift + shadow, or quiet tint.
+     Here's what each feels like."
+
+You: *clicks Invert* → it ships
+```
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## See it work
 
-You point at four service cards and say: **"make these hoverable, with a highlight."**
+You point at four service cards: **"make these hoverable, with a highlight."**
 
-Instead of guessing, the skill reads the cards, sees they have no hover state, and offers:
+The skill reads the cards, sees they have no hover state, and offers:
 
 ```
 ┌─ Hover style ───────────────────────────────────────────┐
@@ -51,124 +105,157 @@ Instead of guessing, the skill reads the cards, sees they have no hover state, a
 └──────────────────────────────────────────────────────────┘
 ```
 
-You click **①**. It builds the invert hover — matching your existing CSS variables and easing — then verifies it against *those specific cards*, and offers to add a `prefers-reduced-motion` guard.
+You pick **①**. It builds the invert hover — matching your existing CSS variables and easing — verifies it against *those specific cards*, and offers a `prefers-reduced-motion` guard.
 
-No blank-page paralysis. No essay describing pixels. You pointed; it shipped.
+No blank-page paralysis. No pixel essay. You pointed; it shipped.
 
 ---
 
-## How it works
+## The loop
 
-```
-Locate → Read → Gauge how open the ask is → Propose directions
-  (one bolder, with previews) → Converge → Build
-  → Verify against the real element → Keep or switch (the menu stays open)
-  → Offer to push further → (on wrap-up) leave a PROGRESS.md handoff
+```mermaid
+flowchart LR
+  A[Locate] --> B[Read code]
+  B --> C[Gauge openness]
+  C --> D[Propose directions]
+  D --> E[Converge]
+  E --> F[Build]
+  F --> G[Verify]
+  G --> H{Keep or switch?}
+  H -->|Switch| F
+  H -->|Keep| I[Push further]
+  I --> J[PROGRESS.md handoff]
 ```
 
-1. **Locate** the actual element / component / file you mean.
-2. **Read** the real code first — existing tokens, conventions, neighbors.
-3. **Gauge** the ask. Trivial + specific? It just does it. Open-ended? It opens up the option space.
-4. **Propose** distinct directions with visual previews — always one bolder than you asked, and always with an off-ramp (see below).
-5. **Converge** on your pick. Expand once, then commit (no endless interrogation).
-6. **Build** it, matching your code's style — leaning on installed expert skills (e.g. GSAP) for the domains they cover.
-7. **Verify** against the real thing.
-8. **Keep or switch** — re-offers the directions you *didn't* pick, so a choice is never a one-way door.
-9. **On wrap-up** (only when it's genuinely time to stop) — create or update a `PROGRESS.md` so the next session resumes cold.
+| Step | What happens |
+| --- | --- |
+| **Locate** | Find the actual element, section, or file you meant |
+| **Read** | Inspect tokens, conventions, and neighbors before proposing anything |
+| **Gauge** | Trivial + specific? Just do it. Open-ended? Open the option space |
+| **Propose** | Distinct directions with previews — one bolder than asked, exits always available |
+| **Converge** | Expand once, then commit. No endless interrogation |
+| **Build** | Implement in your house style; lean on expert skills where installed |
+| **Verify** | Check the result against the *specific* element you pointed at |
+| **Keep or switch** | Re-offer the directions you didn't pick — choices stay reversible |
+| **Handoff** | On wrap-up, update `PROGRESS.md` so the next session resumes cold |
 
 ---
 
 ## What makes it different
 
-These are the guardrails that keep it useful instead of annoying:
+These guardrails keep it useful instead of annoying:
 
-- **🔙 Choices stay reversible.** After it builds, it re-offers the other directions — picking one never buries the rest.
-- **🚪 Always an off-ramp.** Every question quietly carries *"I'll take it from here"* and *"Let's talk it through"* — but variety of real options comes first; the exits never crowd them out.
-- **🏠 Borrows ideas, builds in your house style.** Ask it to take cues from another site and it researches the *patterns* — then executes 100% in your tokens, type scale, and components, so nothing looks transplanted.
-- **🧠 Stands on expert skills.** For domains with a dedicated skill installed (animation → the official GSAP skills, etc.), it invokes that skill instead of improvising — and tells you which one.
-- **🧭 Leaves a breadcrumb.** When you wrap up, it updates a `PROGRESS.md` handoff (goal, done, what's left, how to resume) — updated in place, never duplicated.
+| | Principle | What it means |
+| ---: | --- | --- |
+| 🔙 | **Choices stay reversible** | After it builds, it re-offers the other directions. Picking one never buries the rest. |
+| 🚪 | **Always an off-ramp** | *"I'll take it from here"* and *"Let's talk it through"* are always reachable — but real options come first. |
+| 🏠 | **Borrow ideas, build in house style** | Research external patterns for structure; execute 100% in your tokens, type, and components. Nothing looks transplanted. |
+| 🧠 | **Stands on expert skills** | Animation → official GSAP skills. Typography → [FontPlaybook](https://github.com/MilkDeLeche/FontPlaybook). Says which one it's using. |
+| 🧭 | **Leaves a breadcrumb** | Wrap-up updates `PROGRESS.md` in place — goal, done, what's left, how to resume. |
 
 ---
 
-## Install
+## Example prompts
 
-Drop the `design-discovery` folder into your Claude Code skills directory:
-
-```bash
-# Global — available in every project
-git clone https://github.com/MilkDeLeche/Design-Discovery.git \
-  ~/.claude/skills/design-discovery
-```
-
-| Scope | Path |
-|-------|------|
-| **Global** (all projects) | `~/.claude/skills/design-discovery/` |
-| **Per-project** | `<your-project>/.claude/skills/design-discovery/` |
-
-> **Windows:** `C:\Users\<you>\.claude\skills\design-discovery\`
-
-Restart Claude Code and you're set.
-
-## Use
-
-**You don't need to remember a command.** Point at any element and ask a plain question — the skill reads that element and its styles, then runs the whole loop:
-
-```
+```text
 "what can we do with the nav?"
+```
+
+```text
 "make these cards hoverable"
-"this hero looks bland"
-"help me figure out what I want here"
 ```
 
-It reads the *real* nav, the *real* cards, the *real* hero — then offers grounded directions with previews. No spec-writing on your end.
-
-Prefer to be explicit? The slash command works too:
-
-```bash
-/design-discovery                              # let it lead
-/design-discovery make my footer feel premium  # give it a target
+```text
+"this hero looks bland — help me figure out what I want"
 ```
 
-It **skips the question funnel** for trivial, fully-specified tweaks — so it never gets in your way when you already know exactly what you want.
+```text
+/design-discovery make my footer feel premium
+```
+
+It **skips the funnel** for trivial, fully-specified tweaks — so it never blocks you when you already know exactly what you want.
 
 ---
 
 ## Works on anything
 
-The skill grounds itself in *your* code, so it isn't tied to any one stack or element.
+Grounded in *your* code — not tied to one stack.
 
-| It works on… | Examples |
-|---|---|
-| **Any element** | a single `<div>`, a nav, a card grid, a hero, a whole section |
+| | |
+| --- | --- |
+| **Any element** | a `<div>`, nav, card grid, hero, whole section |
 | **Any framework** | React · Vue · Svelte · Astro · plain HTML |
 | **Any styling** | Tailwind · vanilla CSS · CSS variables · styled-components |
-| **Anywhere Claude Code runs** | terminal · VS Code · JetBrains · the web app |
+| **Any surface** | Claude Code terminal · VS Code · JetBrains · Cursor · web |
 
-Point at a thing, ask "what can we do here?", and it figures out the rest from what's actually on the page.
+Point at a thing. Ask *"what can we do here?"* It figures out the rest from what's on the page.
 
 ---
 
-## Why vibe coders like it
+## Install
 
-- 🎯 **Grounded** — reads your real code, so suggestions actually fit your project.
-- 👀 **Show, don't tell** — pick from visual previews instead of writing specs.
-- 🚀 **One bolder option, always** — surfaces the thing you didn't know to ask for.
-- 🧠 **Knows when to shut up** — small ask, small response. No over-engineering.
-- ✅ **Closes the loop** — builds it *and* checks it against the thing you pointed at.
+### Claude Code (recommended)
 
-## Companion skill
+```bash
+# Global — every project
+git clone https://github.com/MilkDeLeche/Design-Discovery.git \
+  ~/.claude/skills/design-discovery
+```
 
-Pairs with **[FontPlaybook](https://github.com/MilkDeLeche/FontPlaybook)** — keep them separate, but aware:
+| Scope | Path |
+| --- | --- |
+| **Global** | `~/.claude/skills/design-discovery/` |
+| **Per-project** | `<your-project>/.claude/skills/design-discovery/` |
 
-- **design-discovery** — broad creative director: inspect the real element, offer directions, converge, build, verify.
-- **font-playbook** — typography specialist: audit fonts, research industry fit, recommend best/safe/bold fits, implement loading and CSS tokens, verify rendering.
+> **Windows:** `C:\Users\<you>\.claude\skills\design-discovery\`
 
-When the problem is specifically fonts, hierarchy, loading, pairing, or industry-matched type, design-discovery delegates to `font-playbook` instead of guessing at Google Fonts.
+Restart Claude Code (or Cursor) after installing.
+
+### Cursor / other agents
+
+Clone the repo into whatever skills directory your setup reads. The entrypoint is [`SKILL.md`](./SKILL.md).
+
+---
+
+## Repo structure
+
+```text
+Design-Discovery/
+├── SKILL.md              # Core agent workflow (the skill itself)
+├── README.md             # You are here
+├── LICENSE
+└── assets/
+    └── design-discovery-banner.svg
+```
+
+---
+
+## Portfolio note
+
+This repo is a **showcase piece** as much as a tool: a focused example of turning design taste into reusable AI behavior.
+
+The goal isn't another generic "make it pretty" prompt. It's a **structured creative director** that vibe coders can drop into their utility belt — inspect real code, surface directions you'd never have described, build in the project's own language, and leave a handoff when the session ends.
+
+Built by [MilkDeLeche](https://github.com/MilkDeLeche) for the vibe coding community.
+
+---
+
+## Roadmap
+
+- [ ] Before/after case studies from real client projects
+- [ ] Framework-specific walkthroughs (Tailwind, React, Next.js)
+- [ ] Video/GIF demos of the direction-picker flow
+- [ ] Deeper integration docs for the FontPlaybook + GSAP skill stack
+- [ ] A tiny demo page showing the same component with different discovered directions
+
+---
 
 ## Contributing
 
-PRs and ideas welcome — new question patterns, better previews, smarter scope detection. Open an issue or a pull request.
+PRs welcome — new question patterns, better previews, smarter scope detection, real case studies.
+
+Open an issue or pull request.
 
 ## License
 
-[MIT](./LICENSE) © MilkDeLeche
+[MIT](./LICENSE) © [MilkDeLeche](https://github.com/MilkDeLeche)
